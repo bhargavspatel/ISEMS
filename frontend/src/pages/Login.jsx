@@ -12,41 +12,50 @@ function Login() {
     try {
       const response = await api.post("/auth/login", {
         email: email.trim(),
-        password: password,
+        password,
       });
 
       localStorage.setItem("token", response.data.access_token);
       navigate("/dashboard");
     } catch (error) {
-      console.error("Login error:", error.response?.data || error.message);
       alert("Invalid credentials");
     }
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "100px auto", textAlign: "center" }}>
-      <h2>ISEMS Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-        />
-        <button type="submit" style={{ padding: "10px 20px" }}>
-          Login
-        </button>
-      </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-96">
+        <h2 className="text-2xl font-semibold mb-6 text-center">
+          ISEMS Login
+        </h2>
+
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg transition duration-200"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
