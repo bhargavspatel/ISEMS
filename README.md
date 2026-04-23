@@ -1,49 +1,34 @@
 # ISEMS – Intelligent Student Evaluation & Mastery System
+Full-Stack AI-Powered Learning Analytics Platform
 
-ISEMS is a full-stack AI-powered student performance tracking system.
+Live Demo: https://your-vercel-url
 
-## Live Demo
-
-Frontend: https://isems.vercel.app  
 Backend API: https://isems.onrender.com/docs
 
-## Features
+GitHub: https://github.com/bhargavspatel/ISEMS
 
-- JWT Authentication (Student / Instructor roles)
-- Skill-based mastery tracking
-- AI-powered personalized feedback
-- PostgreSQL production database
-- FastAPI backend
-- React + Tailwind frontend
-- Deployed on Render and Vercel
+Overview
 
-## Tech Stack
+ISEMS is a production-deployed adaptive learning analytics system designed to evaluate student performance, compute skill mastery, and generate structured AI feedback.
 
-Backend:
-- FastAPI
-- SQLAlchemy
-- PostgreSQL
-- OpenAI API
-- JWT Authentication
+Features
 
-Frontend:
-- React (Vite)
-- TailwindCSS
-- Axios
+JWT-based authentication (Student / Instructor roles)
+Skill-based weighted mastery calculation engine
+AI-powered structured recommendation system with fallback
+PostgreSQL production database
+Analytics dashboard with charts
+Full deployment on Render (backend) and Vercel (frontend)
 
-Deployment:
-- Render (Backend + Database)
-- Vercel (Frontend)
+Tech Stack
 
-## Architecture
+Backend: FastAPI, SQLAlchemy, PostgreSQL
+Frontend: React (Vite), TailwindCSS, Recharts
+AI: OpenAI API with schema validation
+Deployment: Render + Vercel
 
-Frontend → Vercel  
-Backend → Render  
-Database → Render PostgreSQL  
+Architecture
 
-## Future Improvements
-
-- Instructor analytics dashboard
-- Mastery trend charts
-- AI skill-gap predictions
-- Course progress visualization
+Frontend → Vercel
+Backend API → Render
+Database → Render PostgreSQL
